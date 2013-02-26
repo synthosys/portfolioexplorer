@@ -1,0 +1,8 @@
+o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1361904744.533003:@value{	I"length:EFi2I"digest;
+F"%11fbe28fdfff3cb346893470757a6832I"source;
+FI"2var Division = Backbone.Model.extend({
+	
+});
+;
+FI"_version;
+F"%7336b25d4455d2f6582b4e301d2cddb1

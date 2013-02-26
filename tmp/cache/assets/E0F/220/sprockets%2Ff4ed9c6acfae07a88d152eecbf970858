@@ -1,0 +1,27 @@
+o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1361904663.786023:@value{	I"length:EFiÝI"digest;
+F"%bee2b5a3df8defb297e1902945984940I"source;
+FI"Ý/* line 1, /Users/nidhi/Sites/portfolioexplorer/app/assets/stylesheets/custom-rl.scss */
+.new-base {
+  padding-top: 50px;
+}
+/* line 3, /Users/nidhi/Sites/portfolioexplorer/app/assets/stylesheets/custom-rl.scss */
+.new-base .left-side {
+  padding: 30px;
+}
+/* line 6, /Users/nidhi/Sites/portfolioexplorer/app/assets/stylesheets/custom-rl.scss */
+.new-base .right-side {
+  padding: 30px;
+  border-left: 1px solid #d9d9d9;
+  background: #fcfcfc;
+}
+/* line 10, /Users/nidhi/Sites/portfolioexplorer/app/assets/stylesheets/custom-rl.scss */
+.new-base .right-side input {
+  margin-bottom: 10px;
+}
+/* line 13, /Users/nidhi/Sites/portfolioexplorer/app/assets/stylesheets/custom-rl.scss */
+.new-base .right-side .checkbox {
+  font-size: 9pt;
+}
+;
+FI"_version;
+F"%6bb86f546e8473b6a9a04299fc8a8118

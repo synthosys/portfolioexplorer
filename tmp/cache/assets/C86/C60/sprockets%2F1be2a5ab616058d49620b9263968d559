@@ -1,0 +1,72 @@
+o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1361904744.5456471:@value{	I"length:EFi-	I"digest;
+F"%119efe26cbf4332b28365a34b37ea281I"source;
+FI"-	var Proposal = Backbone.Model.extend({
+	urlRoot: baseURI+"/proposals",
+	initialize: function() {
+		this.extract(this.toJSON());
+	},
+	parse: function(response) {
+//console.log(response);		
+		this.extract(response);
+		return response;
+	},
+	extract: function(proposal) {
+		if (proposal) {
+			this.details_parsed = $.parseJSON(proposal.details);
+			this.researchers_parsed = $.parseJSON(proposal.researchers);
+			this.topics_parsed = $.parseJSON(proposal.topics);
+			this.panels_parsed = $.parseJSON(proposal.panels);
+			this.reviewers_parsed = $.parseJSON(proposal.reviewers);
+			this.reviewerproposals_parsed = $.parseJSON(proposal.reviewerproposals);				
+		}
+	},
+	//getters for the more embedded attributes
+	title: function() {
+		return this.details_parsed.title?this.details_parsed.title:'';
+	},
+	status: function() {
+		return (this.details_parsed.status && this.details_parsed.status.name)?this.details_parsed.status.name:'';
+	},
+	status_date: function() {
+		return (this.details_parsed.status && this.details_parsed.status.date)?this.details_parsed.status.date:'';
+	},
+	amount: function() {
+		if (this.details_parsed.status.name=="award") {
+			var funding = this.details_parsed.awarded.dollar;
+			if (funding && parseInt(funding)>0) return '$'+App.addCommas((funding/1000).toFixed(0))+'K';
+			else return '';
+		} else return "(declined)";
+	},
+/*	lastviewed: function() {
+		var associations = this.associations();
+		if (associations.length>0 && associations[0].lastviewed) return $.timeago(associations[0].lastviewed);
+		else return '';
+	}, */
+	panels_raw: function() {
+		return this.panels_count()>0 ? this.panels_parsed : [];
+	},
+	assigned_users: function() {
+		return this.get('users') ? this.get('users') : [];		
+	},
+	associations: function() {
+		return this.get('associations') ? this.get('associations') : [];		
+	},
+	researchers_count: function() {
+		return this.researchers_parsed ? this.researchers_parsed.length : 0;
+	},
+	topics_count: function() {
+		return this.topics_parsed ? this.topics_parsed.length : 0;
+	},
+	panels_count: function() {
+		return this.panels_parsed ? this.panels_parsed.length : 0;
+	},
+	reviewers_count: function() {
+		return this.reviewers_parsed ? this.reviewers_parsed.length : 0;
+	},
+	reviewer_proposals_count: function() {
+		return this.reviewerproposals_parsed ? this.reviewerproposals_parsed.length : 0;
+	}
+});
+;
+FI"_version;
+F"%19693047fb602fc149833a40638bb869

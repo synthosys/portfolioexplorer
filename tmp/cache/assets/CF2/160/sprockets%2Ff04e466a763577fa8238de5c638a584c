@@ -1,0 +1,9 @@
+o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1361904744.526565:@value{	I"length:EFi›I"digest;
+F"%528710dafd588d8fc6558a4c884a2aadI"source;
+FI"›var scripts = document.getElementsByTagName("script")
+baseURI = scripts[scripts.length-1].src
+baseURI = baseURI.substring(0, baseURI.indexOf("/assets"))
+;
+;
+FI"_version;
+F"%a15ea567eb649186360ff7e1576a3190

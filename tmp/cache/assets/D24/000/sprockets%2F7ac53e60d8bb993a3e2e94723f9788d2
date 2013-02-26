@@ -1,0 +1,288 @@
+o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1361904744.569984:@value{	I"length:EFi	*I"digest;
+F"%c47394102a7beb5285191ac320a9c01aI"source;
+FI"	*App.Views.dashboardProgramsTopics = Backbone.View.extend({
+	events: {
+		"click button#gobackto": "goBackTo",
+		"click button#update": "render",
+		"click button#reset": "reset",
+		"change select#filter_year_from": "load",
+		"change select#filter_year_to": "load",
+		"change select#filter_topicrelevance": "render",
+		"click a[id^=link_to_topics_divisions_]": 'gotoTopicsDivisions'
+	},
+	initialize: function() {
+		this.model = new Topic();
+		//use the topics collection, it has a special function that will load all topic relevances!
+		this.collection = new App.Collections.Topics;
+		this.collection.on('loadcomplete', this.render, this);
+
+		var self = this;
+		require(['text!templates/dashboard/programs_topics.html'], function(html) {
+			var template = _.template(html);
+			//we make this query so many times, think about how to improve it
+			// lookup using pge legend in the data api
+			$.getJSON(apiurl+"prop?legend=nsf_pge&q="+self.options.pge+"&jsoncallback=?", function(data){
+				var html = template({pge:self.options.pge,label:data?data[0].label:''}); //save it off
+				$(self.el).html(html);
+				//set year selection
+				var startYear = getStartYear();
+				var endYear = getEndYear();
+				var year = self.options.params['year']?self.options.params['year'].split('-'):[startYear,endYear];
+				$("select#filter_year_from", self.el).html(App.renderYearSelect(getFirstYear(),getCurrentYear(),year[0]?year[0]:startYear));
+				$("select#filter_year_to", self.el).html(App.renderYearSelect(getFirstYear(),getCurrentYear(),year[1]?year[1]:endYear));
+				//set topicrelevance selection
+				$("select#filter_topicrelevance", self.el).html(App.renderTopicRelevance());
+				//set footnote
+				$('div#data_footnote', self.el).html(App.renderDataFootNote('topics'));
+				$('div#data_footnote', self.el).hide();		
+				//load
+				self.load();
+            });
+		});
+	},
+	goBackTo: function(e) {
+		e.preventDefault();
+
+		window.history.back();		
+	},
+	gotoTopicsDivisions: function(e) {
+		e.preventDefault();
+		
+		var id = $(e.currentTarget).attr('id').split('_').pop();
+		
+		window.location.href = baseURI+'/research#topics/divisions/'+id+'/?year='+$('select#filter_year_from', this.el).val()+'-'+$('select#filter_year_to', this.el).val();
+	},
+	reset: function(e) {
+		e.preventDefault();
+		
+		$("input#t1").val('4');
+		$("input#t2").val('3');
+		$("input#t3").val('2');
+		$("input#t4").val('1');
+		
+		this.render();
+	},
+	load: function(e) {
+		if (e) e.preventDefault();
+		
+		if ($('select#filter_year_from', this.el).val()>$('select#filter_year_to', this.el).val()) {
+			alert('Pick an appropriate date range');
+			return;
+		}
+		
+		$('div#loader', this.el).html("<img src='" + baseURI + "/assets/ajax-load.gif" + "'/> Loading topics");
+		$('div#data_footnote', self.el).hide();		
+
+		//load	
+		var year = $("select#filter_year_from", this.el).val()?$("select#filter_year_from", this.el).val():getStartYear();
+		year += '-';
+		year += $("select#filter_year_to", this.el).val()?$("select#filter_year_to", this.el).val():getEndYear();
+		this.collection.load({org:getDivision()+','+this.options.pge,year:year},true);
+	},
+	render: function(e) {
+		if (e) e.preventDefault();
+
+		var self = this;
+		
+		//read the currently specified weights
+		var weights = {};
+		_.each([1,2,3,4], function(topicrelevance) { 
+			weights['t'+topicrelevance.toString()] = $('input#t'+topicrelevance.toString(), self.el).val();
+		});
+
+		var topicrelevance = $("select#filter_topicrelevance", this.el).val();
+		
+		//apply the counts and relevances
+		var loaded_topics = this.collection.countbyrelevance(topicrelevance);
+
+		var totalawardamount = 0;		
+		//before we do anything else, let's count total award amounts, we need this to calculate
+		//percentage of portfolio
+		_.each(loaded_topics,function(row) {
+			if (row['t1']) totalawardamount += row['t1'].funding.award;
+		});
+
+		//make a list of unique years
+		var years = App.getSelectedYears();
+
+		//prepare for datatable data - conv to array
+		var data = [];
+		_.each(loaded_topics, function(row) {
+			var topicid = row.t;
+			//ignoring t0
+			if (topicid!='0') {
+				//funding rate
+				var fundingrate = self.model.calcFundingRate(row);
+				//avg award size
+				var avgawardsize = self.model.calcAvgAwardSize(row);
+				//perc of portfolio
+				var percofportfolio = self.model.calcPercOfPortfolio(row,totalawardamount);
+				//figure out the weights and relevances here
+				var topic_weightedprevalence = self.model.calcWeightedRelevance(row,weights);
+				//figure out the growth rate here
+				var growth = self.model.calcGrowthRate(row,years);
+				//return it
+				data.push({weighted:topic_weightedprevalence, topicid:topicid, label:row["label"], words:row["words"], count:{award:row.count.award,decline:row.count.decline,other:row.count.other},funding:{award:row.funding.award,request:row.funding.request},fundingrate:fundingrate,growth:growth,avgawardsize:avgawardsize,percofportfolio:percofportfolio});				
+			}
+		});
+
+		//columns
+		var columns = [
+			{
+				"sTitle": "Weighted<br />Prevalence<br />(Awards)",
+				"fnRender": function( oObj ) {
+					return oObj.aData.weighted.toFixed(0);
+				},
+				"asSorting": [ "desc", "asc" ], //first sort desc, then asc
+				"mDataProp": "weighted"
+			},
+			{
+				"fnRender": function ( oObj ) {
+					var html = "<strong>t"+oObj.aData.topicid+'</strong>';
+					if (oObj.aData.words) html += ' - '+oObj.aData.words;
+					html += ' <a href="#" id="link_to_topics_divisions_'+oObj.aData.topicid+'">View Topic at NSF</a>';
+					return html;
+				},
+				"sTitle": "Topic",
+				"mDataProp": "label"
+			},
+			{
+				"sTitle": "Awards with Topic",
+				"asSorting": [ "desc", "asc" ], //first sort desc, then asc
+				"mDataProp": "count.award"
+			}
+		];
+		columns.push({
+			"sTitle": "Awards with Topic ($)",
+			"asSorting": [ "desc", "asc" ], //first sort desc, then asc
+			"mDataProp": function ( source, type, val ) {
+		        if (type === 'set') {
+		          // Store the computed display for speed
+		          source.funding_award_rendered = self.model.formatFunding(source.funding.award);
+		          return;
+		        }
+		        else if (type === 'display' || type === 'filter') {
+				  if (source.funding_award_rendered) return source.funding_award_rendered;
+		          else return self.model.formatFunding(source.funding.award); //.amount_rendered;
+		        }
+		        // 'sort' and 'type' both just use the raw data
+		        return source.funding.award;
+			}
+		});
+		if (years.length>0) {
+			columns.push({
+				"sTitle": "Avg. Topic Growth ($)",
+				"asSorting": [ "desc", "asc" ], //first sort desc, then asc
+				"mDataProp": function ( source, type, val ) {
+			        if (type === 'set') {
+			          // Store the computed display for speed
+			          source.growth_funding_rendered = source.growth.funding.toString()+'%';
+			          return;
+			        }
+			        else if (type === 'display' || type === 'filter') {
+					  if (source.growth_funding_rendered) return source.growth_funding_rendered;
+			          else return (source.growth.funding).toString()+'%';
+			        }
+			        // 'sort' and 'type' both just use the raw data
+			        return source.growth.funding;
+				}				
+			});
+		}
+		columns.push({
+			"sTitle": "Avg. Award Size ($)",
+			"asSorting": [ "desc", "asc" ], //first sort desc, then asc
+			"mDataProp": function ( source, type, val ) {
+		        if (type === 'set') {
+		          // Store the computed display for speed
+		          source.avgawardsize_rendered = self.model.formatFunding(source.avgawardsize);
+		          return;
+		        }
+		        else if (type === 'display' || type === 'filter') {
+				  if (source.avgawardsize_rendered) return source.avgawardsize_rendered;
+		          else return self.model.formatFunding(source.avgawardsize);
+		        }
+		        // 'sort' and 'type' both just use the raw data
+		        return source.avgawardsize;
+			}
+		});
+		columns.push({
+			"sTitle": "% of Prg. Portfolio ($)",
+			"asSorting": [ "desc", "asc" ], //first sort desc, then asc
+			"mDataProp": function ( source, type, val ) {
+		        if (type === 'set') {
+		          // Store the computed display for speed
+		          source.percofportfolio_rendered = source.percofportfolio.toString()+'%';
+		          return;
+		        }
+		        else if (type === 'display' || type === 'filter') {
+				  if (source.percofportfolio_rendered) return source.percofportfolio_rendered;
+		          else return source.percofportfolio.toString()+'%';
+		        }
+		        // 'sort' and 'type' both just use the raw data
+		        return source.percofportfolio;
+			}
+		});
+		if (proposalaccessallowed) {
+			columns.push({
+				"sTitle": "Declines with Topic",
+				"asSorting": [ "desc", "asc" ], //first sort desc, then asc
+				"mDataProp": "count.decline"
+			});
+			/* columns.push({
+				"sTitle": "Requested Amt.",
+				"asSorting": [ "desc", "asc" ], //first sort desc, then asc
+				"mDataProp": function ( source, type, val ) {
+			        if (type === 'set') {
+			          // Store the computed display for speed
+			          source.funding_request_rendered = self.model.formatFunding(source.funding.request);
+			          return;
+			        }
+			        else if (type === 'display' || type === 'filter') {
+					  if (source.funding_request_rendered) return source.funding_request_rendered;
+			          else return self.model.formatFunding(source.funding.request); //.amount_rendered;
+			        }
+			        // 'sort' and 'type' both just use the raw data
+			        return source.funding.request;
+				}
+			}); */
+			columns.push({
+				"sTitle": "Funding Rate",
+				"mDataProp": function ( source, type, val ) {
+			        if (type === 'set') {
+			          // Store the computed display for speed
+			          source.fundingrate_rendered = source.fundingrate.toFixed(2).toString()+'%';
+			          return;
+			        }
+			        else if (type === 'display' || type === 'filter') {
+					  if (source.fundingrate_rendered) return source.fundingrate_rendered;
+			          else return (source.fundingrate).toFixed(2).toString()+'%';
+			        }
+			        // 'sort' and 'type' both just use the raw data
+			        return source.fundingrate;
+				}
+			});
+		}
+
+		//make export file name
+		var exportfilename = 'topics';
+		if (this.options.pge) exportfilename += '_p'+this.options.pge;
+		//year
+		var startyear = $('select#filter_year_from', this.el).val();
+		var endyear = $('select#filter_year_to', this.el).val();
+		exportfilename += '_'+startyear+'_'+endyear;
+		App.renderDataTable($('#topics_table', this.el),{
+			"aaData": data,
+			"aoColumns": columns,
+			"aaSorting": [[0, 'desc']]
+		},exportfilename);
+
+		$('div#loader', this.el).html('');
+		$('div#data_footnote', self.el).show();		
+		
+		//backbone convention to allow chaining
+		return this;
+	}
+});
+;
+FI"_version;
+F"%21a6deeab7d528596b5b4036536618bb

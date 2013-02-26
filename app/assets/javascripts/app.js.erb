@@ -1,0 +1,395 @@
+var App = {
+    Collections: {},
+    Views: {},
+	states: {
+	  'AL': 'Alabama',
+	  'AK': 'Alaska',
+	  'AZ': 'Arizona',
+	  'AR': 'Arkansas',
+	  'CA': 'California',
+	  'CO': 'Colorado',
+	  'CT': 'Connecticut',
+	  'DE': 'Delaware',
+	  'DC': 'District of Columbia',
+	  'FL': 'Florida',
+	  'GA': 'Georgia',
+	  'HI': 'Hawaii',
+	  'ID': 'Idaho',
+	  'IL': 'Illinois',
+	  'IN': 'Indiana',
+	  'IA': 'Iowa',
+	  'KS': 'Kansas',
+	  'KY': 'Kentucky',
+	  'LA': 'Louisiana',
+	  'ME': 'Maine',
+	  'MD': 'Maryland',
+	  'MA': 'Massachusetts',
+	  'MI': 'Michigan',
+	  'MN': 'Minnesota',
+	  'MS': 'Mississippi',
+	  'MO': 'Missouri',
+	  'MT': 'Montana',
+	  'NE': 'Nebraska',
+	  'NV': 'Nevada',
+	  'NH': 'New Hampshire',
+	  'NJ': 'New Jersey',
+	  'NM': 'New Mexico',
+	  'NY': 'New York',
+	  'NC': 'North Carolina',
+	  'ND': 'North Dakota',
+	  'OH': 'Ohio',
+	  'OK': 'Oklahoma',
+	  'OR': 'Oregon',
+	  'PA': 'Pennsylvania',
+	  'RI': 'Rhode Island',
+	  'SC': 'South Carolina',
+	  'SD': 'South Dakota',
+	  'TN': 'Tennessee',
+	  'TX': 'Texas',
+	  'UT': 'Utah',
+	  'VT': 'Vermont',
+	  'VA': 'Virginia',
+	  'WA': 'Washington',
+	  'WV': 'West Virginia',
+	  'WI': 'Wisconsin',
+	  'WY': 'Wyoming'
+	},
+	divisions: {
+	"OCI":"Office of Cyberinfrastructure",
+	"OGC":"Office of the General Counsel",
+	"OIA":"Office of Integrative Activities",
+	"OISE":"Office of International Science and Engineering",
+	"ODI":"Office of Diversity and Inclusion (ODI)",
+	"OLPA":"Office of Legislative & Public Affairs",
+	"ANT":"Antarctic Sciences",
+	"ARC":"Arctic Sciences",
+	"AIL":"Antarctic Infrastructure and Logistics",
+	"PEHS":"Office of Polar Environment, Health and Safety",
+	"A/D":"Front Office",
+	"NSB":"Office of the Assistant Director",
+	"OIG":"Office of the Assistant Director",
+	"MCB":"Division of Molecular & Cellular Biosciences",
+	"DBI":"Division of Biological Infrastructure",
+	"IOS":"Division of Integrative Organismal Systems",
+	"DEB":"Division of Environmental Biology",
+	"EF":"Emerging Frontiers Office",
+	"CCF":"Division of Computing and Communication Foundations",
+	"CNS":"Division of Computer and Network Systems",
+	"IIS":"Division of Information and Intelligent Systems",
+	"DRL":"Division of Research on Learning in Formal and Informal Settings",
+	"DGE":"Division of Graduate Education",
+	"HRD":"Division of Human Resource Development",
+	"DUE":"Division of Undergraduate Education",
+	"CBET":"Division of Chemical, Bioengineering, Environmental, and Transport Systems",
+	"CMMI":"Division of Civil, Mechanical & Manufacturing Innovation",
+	"ECCS":"Division of Electrical, Communications & Cyber Systems",
+	"EEC":"Division of Engineering Education & Centers",
+	"EFRI":"Office of Emerging Frontiers in Research & Innovation",
+	"IIP":"Division of Industrial Innovation & Partnerships",
+	"ENG":"Office of the Assistant Director",
+	"AGS":"Division of Atmospheric and Geospace Sciences",
+	"EAR":"Division of Earth Sciences",
+	"OCE":"Division of Ocean Sciences",
+	"GEO":"Office of the Assistant Director",
+	"AST":"Division of Astronomical Sciences",
+	"CHE":"Division of Chemistry",
+	"DMR":"Division of Materials Research",
+	"DMS":"Division of Mathematical Sciences",
+	"PHY":"Division of Physics",
+	"MPS":"Office of the Assistant Director",
+	"SES":"Division of Social and Economic Sciences",
+	"BCS":"Division of Behavioral and Cognitive Sciences",
+	"NCSE":"National Center for Science and Engineering Statistics",
+	"SMA":"SBE Office of Multidisciplinary Activities",
+	"SBE":"Office of the Assistant Director",
+	"BD":"Budget Division",
+	"DACS":"Division of Acquisition and Cooperative Support",
+	"DFM":"Division of Financial Management",
+	"DGA":"Division of Grants & Agreements",
+	"DIAS":"Division of Institution and Award Support",
+	"HRM":"Division of Human Resource Management",
+	"DIS":"Division of Information Systems",
+	"DAS":"Division of Administrative Services",
+	"EPSCoR":"Office of Experimental Program To Stimulate Competitive Research",
+	"EPS":"Office of Experimental Program to Stimulate Competitive Research"
+	},
+	directorates: {
+		"Office of the Director": [
+			"OCI",
+			"OGC",
+			"OISE",
+			"ODI", 
+			"OLPA",
+			"OIA",
+			{ 
+				"Office of Polar Programs": [
+					"ANT",
+					"ARC",
+					"AIL",
+					"PEHS",
+					"A/D"
+				]
+			}
+		],
+		"Office of Information & Resource Management": [
+			"EPSCoR"
+		],
+		"National Science Board": [
+			"NSB"
+		],
+		"Office of the Inspector General": [
+			"OIG"
+		],
+		"Directorate for Biological Sciences": [
+			"MCB",
+			"DBI",	
+			"IOS",	
+			"DEB",	
+			"EF"	
+		],
+		"Directorate for Computer & Information Science & Engineering": [
+			"CCF",
+			"CNS",	
+			"IIS"	
+		],
+		"Directorate for Education & Human Resources": [
+			"DRL",
+			"DGE",
+			"HRD",
+			"DUE"
+		],
+		"Directorate for Engineering": [
+			"CBET",
+			"CMMI",
+			"ECCS",	
+			"EEC",	
+			"EFRI",	
+			"IIP",
+			"ENG"	
+		],
+		"Directorate for Geosciences": [
+			"AGS",
+			"EAR",
+			"OCE",
+			"GEO"
+		],
+		"Directorate for Mathematical & Physical Sciences": [
+			"AST",
+			"CHE",
+			"DMR",
+			"DMS",
+			"PHY",
+			"MPS"
+		],
+		"Directorate for Social, Behavioral & Economic Sciences": [
+			"SES",
+			"BCS",	
+			"NCSE",	
+			"SMA",
+			"SBE"
+		],
+		"Office of Budget, Finance, and Award Management": [
+			"BD",
+			"DACS",
+			"DFM",
+			"DGA",
+			"DIAS"
+		],
+		"Office of Information & Resource Management": [
+			"HRM",
+			"DIS",	
+			"DAS",	
+			"EPS"
+		],
+	},
+	legend_topics: {},	
+	views: {},
+ 	privatedataaccesschecked: false,
+   init: function() {
+		//have the navbar auto-re-adjust
+		navb_dims = {"w": $(".navbar-inner").width(), "t": $(".navbar-inner").offset()["top"], "h": $("navbar-inner").height()}
+
+		if ($.browser.msie != true) {
+			$(window).scroll(function() {
+				if ($(window).scrollTop() > navb_dims["t"]) {
+					$(".navbar-inner").css("position", "fixed").css("top", "0px").css("width", navb_dims["w"]);
+				} else if ($(window).scrollTop() < (navb_dims["t"] + navb_dims["h"])) {
+					$(".navbar-inner").css("position", "relative");
+				}
+			});
+		}
+
+		var self = this;
+		$.getJSON(apiurl+'topic?legend=topic'+'&jsoncallback=?', function(data) {
+			_.each(data, function(item) {
+				self.legend_topics[item["topic"]] = {"words":item["words"],"label":item["label"]};
+			});
+		    self.app_router = new AppRouter;
+		    Backbone.history.start();
+			//load any bootstrapped views
+			if (!self.privatedataaccesschecked) {
+			    // Check to see if we have access to nsfstarmetrics server 
+			    $.ajax({
+			      url: "http://nsf.api.smetrics.org/v1/access",
+			      dataType: 'JSONP',
+			      timeout: 500,
+				  success: function(data) {
+					proposalaccessallowed = true;
+					apiurl = "http://nsf.api.smetrics.org/v1/";
+					//set the flag that tells us we already did this
+					self.privatedataaccesschecked = true;
+					self.load();						
+				  },
+				  error: function(x,t,m) {
+					//set the flag that tells us we already did this
+					self.privatedataaccesschecked = true;						
+					self.load();						
+				  }
+				});
+			} else {
+				self.load();					
+			}
+		});
+    },
+	load: function() {
+		//load the requested view
+		//if (App.viewparams) params = App.viewparams;
+		if (App.views && _.size(App.views)>0) {
+			_.each(App.views, function(params,view) {
+				if (App.Views[view]) {
+					var viewobj = App.Views[view];
+					new viewobj(params);						
+				}
+			});
+		};
+	},
+	//adding commas to a number to format it
+	addCommas: function(nStr)
+	{
+		nStr += '';
+		x = nStr.split('.');
+		x1 = x[0];
+		x2 = x.length > 1 ? '.' + x[1] : '';
+		var rgx = /(\d+)(\d{3})/;
+		while (rgx.test(x1)) {
+			x1 = x1.replace(rgx, '$1' + ',' + '$2');
+		}
+		return x1 + x2;
+	},
+	//Check to see if the data exists or is null 
+	keyExists: function (key, object, value) {
+		if (value == null)
+			value = "";
+		$(key.split(".")).each(function(i, v) {
+			if (v in object) 
+				object = object[v];
+			else {
+				object = value;
+				return false;
+			}
+		});
+		return object;
+	},
+	clearDataTable: function(elem_id, renderTableTo) {
+		if (this.isDataTable(elem_id)) {
+			var oTable = renderTableTo.dataTable();
+			oTable.fnDestroy();
+			oTable.empty();
+			$(".DTTT_collection").remove(); //remove table tools explicitly
+		}
+	},
+	renderDataTable: function(el,params,exportfilename) {
+		//export file name is passed in as a special param because of how it's specified in the datatables params, hard to target such a nested attribute easily so passing it as an extra param
+		var tableparams = {
+			"bDestroy": _.has(params,'bDestroy')?params.bDestroy:true,
+			"bJQueryUI": _.has(params,'bJQueryUI')?params.bJQueryUI:true,
+			"sPaginationType": _.has(params,'sPaginationType')?params.sPaginationType:"full_numbers",
+			"iDisplayLength": _.has(params,'iDisplayLength')?params.iDisplayLength:50,
+			"bAutoWidth": _.has(params,'bAutoWidth')?params.bAutoWidth:false,
+			"bProcessing": true,
+			"aaData": params.aaData,
+			"aoColumns": _.has(params,'aoColumns')?params.aoColumns:[],
+			"aoColumnDefs": _.has(params,'aoColumnDefs')?params.aoColumnDefs:[],
+			"aaSorting": _.has(params,'aaSorting')?params.aaSorting:[],
+			"oLanguage": {
+				"sLengthMenu:": "Display _MENU_ records per page",
+				"sSearch": "Filter:"
+			},
+			"sDom": _.has(params,'sDom')?params.sDom:'<"H"fTr>t<"F"lip>',
+	        "oTableTools": {
+				"sSwfPath": baseURI+"/assets/tabletools/media/swf/copy_csv_xls_pdf.swf",
+	            "aButtons": [
+	                {
+	                    "sExtends":    "csv",
+	                    "sButtonText": "Export as CSV",
+						"sTitle": exportfilename?exportfilename:"NSF_Export"
+	                }
+	            ]
+	        }
+		};
+		//now add any custom params
+		_.each(params, function(value,key) {
+			if (!_.has(tableparams,key)) tableparams[key] = value;
+		});
+		
+		el.dataTable(tableparams);		
+	},
+	isDataTable: function( sInstance )
+	{
+	    var settings = $.fn.dataTableSettings;
+	    for ( var i=0, iLen=settings.length ; i<iLen ; i++ )
+	    {
+	        //if ( settings[i].nTable == nTable )
+			if ( settings[i].sInstance == sInstance )
+	        {
+	            return true;
+	        }
+	    }
+	    return false;
+	},
+	renderYearSelect: function (start,end,current) {
+		var html = '';
+		for (var i=start;i<=end;i++) {
+			var selected = (i.toString()==current.toString())?' selected':'';
+			html += '<option value="'+i.toString()+'"'+selected+'>'+(i==getCurrentYear()?i.toString():i.toString().replace(/^20/,'FY'))+'</option>';
+		}
+		return html;
+	},
+	getSelectedYears: function() {
+		var years = [];
+		for (var i=$('select#filter_year_from').val();i<=$('select#filter_year_to').val();i++) {
+			years.push(parseInt(i));
+		}
+		return years;
+	},
+	renderTopicRelevance: function(current) {
+		var html = '';
+		//this could be done in a little dryer, more clever way
+		html += '<option value="1"'+(current=='1'?' selected':'')+'>Primary Topic</option>';
+		html += '<option value="1,2"'+(current=='1,2'?' selected':'')+'>Top 2</option>';
+		html += '<option value="1,2,3"'+(current=='1,2,3'?' selected':'')+'>Top 3</option>';
+		html += '<option value="1,2,3,4"'+(current=='1,2,3,4'?' selected':'')+'>Top 4</option>';
+		
+		return html;
+	},
+	renderDataFootNote: function(forwhat) {
+		var html = '<p><small>';
+		if (forwhat=='proposals') {
+			html += 'The <strong>"Amount"</strong> shown reflects the Awarded Amount for Awarded Proposals and the Requested Amount for Declined or Other Proposals (internal NSF users only).<br />';			
+			html += 'The <strong>"Date"</strong> for Awarded Proposals is the Award date. For Declines/Others (internal NSF users only), the date reflects the Requested Start Date.<br />';
+			html += '"Other" proposals (internal NSF users only) include proposals with various statuses such as continuation, move by PI, and others.<br />';
+		} else if (forwhat=='topics' || forwhat=='programs') {
+			html += 'The <strong>"Average Growth ($)"</strong> reflects the average of the incremental growth/decline of the Awarded Amounts that were expended during the time period shown.<br />';
+			html += 'The <strong>"Average Growth (#)"</strong> reflects the average of the incremental growth/decline of Proposals that were awarded during the time period shown.<br />';
+			html += 'The <strong>"Funding Rate"</strong> reflects the percentage of Awarded Proposals relative to the total number of Proposals (Awarded plus Declined but excluding "Others").<br />';
+			if (forwhat=='topics') {
+				html += '<strong>"Weighted Prevalence"</strong>: "See sidebar for more information.';
+			}
+		} else if (forwhat=='researchers') {
+			html += 'The "Proposals" shown reflects the sum of Awarded Proposals and the Declined/Other Proposals (internal NSF users only).';
+		}
+		html += '</small></p>';
+		
+		return html;
+	}
+};

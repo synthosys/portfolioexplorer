@@ -1,0 +1,18 @@
+o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1361904747.083466:@value{I"
+class:EFI"StaticAsset;
+FI"id;
+F"%2eac4334a732821650b69dc05bd5dcf2I"logical_path;
+FI"headerbg-wide.png;
+TI"pathname;
+FI".$root/app/assets/images/headerbg-wide.png;
+FI"content_type;
+FI"image/png;
+FI"
+mtime;
+FI"2013-02-21T17:14:44-05:00;
+FI"length;
+FI"
+75310;
+FI"digest;
+F"%de1aae1235a933d8f34dff22dce95afeI"_version;
+F"%46dde6621c301f4928e3b34efee9e3b5

@@ -1,0 +1,17 @@
+o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1361904911.239854:@value{I"
+class:EFI"StaticAsset;
+FI"id;
+F"%0330af60ecb54273e7442d02fa5f8412I"logical_path;
+FI"@jquery-ui/css/smoothness/images/ui-icons_888888_256x240.png;
+TI"pathname;
+FI"`$root/vendor/assets/stylesheets/jquery-ui/css/smoothness/images/ui-icons_888888_256x240.png;
+FI"content_type;
+FI"image/png;
+FI"
+mtime;
+FI"2013-02-21T17:14:44-05:00;
+FI"length;
+FI"	4369;
+FI"digest;
+F"%c6f1d6e778e58e5d566afbdc1036978cI"_version;
+F"%46dde6621c301f4928e3b34efee9e3b5
