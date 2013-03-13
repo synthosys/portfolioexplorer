@@ -114,13 +114,13 @@ top: 13px;
 display: block;
 height: 101px;
 width: 452px;
-background: transparent url(cov-logo.png) no-repeat top left;
+background: transparent url(dashboard_proto-logo.png) no-repeat top left;
 overflow: hidden;
 text-indent: -100%;
 }
 
 .header-base h1.internal a {
-background: transparent url(cov-logo-internal.png) no-repeat top left;
+background: transparent url(dashboard_proto-logo.png) no-repeat top left;
 }
 
 .header-base .seal-pres,
