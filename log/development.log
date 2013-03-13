@@ -2683,3 +2683,231 @@ Served asset /views/research/topics_proposal.js - 304 Not Modified (0ms)
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-02-26 14:13:48 -0500
 Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-03-13 10:46:04 -0400
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.5ms)
+Compiled custom.css  (0ms)  (pid 48014)
+Compiled application.css  (6ms)  (pid 48014)
+Completed 200 OK in 455ms (Views: 454.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2013-03-13 10:46:05 -0400
+Served asset /bootstrap.css - 200 OK (2ms)
+
+
+Started GET "/assets/flags.css?body=1" for 127.0.0.1 at 2013-03-13 10:46:05 -0400
+Served asset /flags.css - 200 OK (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-03-13 10:46:05 -0400
+Served asset /jquery.js - 200 OK (3ms)
+
+
+Started GET "/assets/jquery-ui/css/smoothness/jquery-ui-1.8.18.custom.css?body=1" for 127.0.0.1 at 2013-03-13 10:46:05 -0400
+Served asset /jquery-ui/css/smoothness/jquery-ui-1.8.18.custom.css - 200 OK (2ms)
+
+
+Started GET "/assets/tabletools/media/css/TableTools.css?body=1" for 127.0.0.1 at 2013-03-13 10:46:05 -0400
+Served asset /tabletools/media/css/TableTools.css - 200 OK (2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-03-13 10:46:05 -0400
+Served asset /application.css - 200 OK (0ms)
+
+
+Started GET "/assets/custom-rl.css?body=1" for 127.0.0.1 at 2013-03-13 10:46:05 -0400
+Served asset /custom-rl.css - 200 OK (2ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2013-03-13 10:46:05 -0400
+Served asset /custom.css - 200 OK (2ms)
+
+
+Started GET "/assets/underscore/underscore.js?body=1" for 127.0.0.1 at 2013-03-13 10:46:05 -0400
+Served asset /underscore/underscore.js - 200 OK (18ms)
+
+
+Started GET "/assets/backbone/backbone.js?body=1" for 127.0.0.1 at 2013-03-13 10:46:05 -0400
+Served asset /backbone/backbone.js - 200 OK (7ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-03-13 10:46:05 -0400
+Served asset /bootstrap.js - 200 OK (59ms)
+
+
+Started GET "/assets/jquery.timeago.js?body=1" for 127.0.0.1 at 2013-03-13 10:46:05 -0400
+Served asset /jquery.timeago.js - 200 OK (47ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-03-13 10:46:05 -0400
+Served asset /jquery_ujs.js - 200 OK (2ms)
+
+
+Started GET "/assets/serializeobject.js?body=1" for 127.0.0.1 at 2013-03-13 10:46:05 -0400
+Served asset /serializeobject.js - 200 OK (1ms)
+
+
+Started GET "/assets/json2.js?body=1" for 127.0.0.1 at 2013-03-13 10:46:05 -0400
+Served asset /json2.js - 200 OK (2ms)
+
+
+Started GET "/assets/jquery.expander.min.js?body=1" for 127.0.0.1 at 2013-03-13 10:46:05 -0400
+Served asset /jquery.expander.min.js - 200 OK (1ms)
+
+
+Started GET "/assets/jquery-ui/js/jquery-ui-1.8.18.custom.min.js?body=1" for 127.0.0.1 at 2013-03-13 10:46:05 -0400
+Served asset /jquery-ui/js/jquery-ui-1.8.18.custom.min.js - 200 OK (3ms)
+
+
+Started GET "/assets/datatables/dataTables.fnFindCellRowIndexes.js?body=1" for 127.0.0.1 at 2013-03-13 10:46:05 -0400
+Served asset /datatables/dataTables.fnFindCellRowIndexes.js - 200 OK (1ms)
+
+
+Started GET "/assets/datatables/datatables.min.js?body=1" for 127.0.0.1 at 2013-03-13 10:46:05 -0400
+Served asset /datatables/datatables.min.js - 200 OK (4ms)
+
+
+Started GET "/assets/tabletools/media/js/TableTools.min.js?body=1" for 127.0.0.1 at 2013-03-13 10:46:05 -0400
+Served asset /tabletools/media/js/TableTools.min.js - 200 OK (2ms)
+
+
+Started GET "/assets/tabletools/media/js/ZeroClipboard.js?body=1" for 127.0.0.1 at 2013-03-13 10:46:05 -0400
+Served asset /tabletools/media/js/ZeroClipboard.js - 200 OK (1ms)
+
+
+Started GET "/assets/router.js?body=1" for 127.0.0.1 at 2013-03-13 10:46:05 -0400
+Served asset /router.js - 200 OK (2ms)
+
+
+Started GET "/assets/app.js?body=1" for 127.0.0.1 at 2013-03-13 10:46:05 -0400
+Served asset /app.js - 200 OK (1ms)
+
+
+Started GET "/assets/global.js?body=1" for 127.0.0.1 at 2013-03-13 10:46:05 -0400
+Served asset /global.js - 200 OK (1ms)
+
+
+Started GET "/assets/models/topic.js?body=1" for 127.0.0.1 at 2013-03-13 10:46:05 -0400
+Served asset /models/topic.js - 200 OK (1ms)
+
+
+Started GET "/assets/models/division.js?body=1" for 127.0.0.1 at 2013-03-13 10:46:05 -0400
+Served asset /models/division.js - 200 OK (1ms)
+
+
+Started GET "/assets/models/program.js?body=1" for 127.0.0.1 at 2013-03-13 10:46:05 -0400
+Served asset /models/program.js - 200 OK (1ms)
+
+
+Started GET "/assets/collections/topics.js?body=1" for 127.0.0.1 at 2013-03-13 10:46:05 -0400
+Served asset /collections/topics.js - 200 OK (1ms)
+
+
+Started GET "/assets/collections/divisions.js?body=1" for 127.0.0.1 at 2013-03-13 10:46:05 -0400
+Served asset /collections/divisions.js - 200 OK (1ms)
+
+
+Started GET "/assets/collections/programs.js?body=1" for 127.0.0.1 at 2013-03-13 10:46:05 -0400
+Served asset /collections/programs.js - 200 OK (1ms)
+
+
+Started GET "/assets/models/proposal.js?body=1" for 127.0.0.1 at 2013-03-13 10:46:05 -0400
+Served asset /models/proposal.js - 200 OK (2ms)
+
+
+Started GET "/assets/views/dashboard/division.js?body=1" for 127.0.0.1 at 2013-03-13 10:46:05 -0400
+Served asset /views/dashboard/division.js - 200 OK (3ms)
+
+
+Started GET "/assets/views/dashboard/geography.js?body=1" for 127.0.0.1 at 2013-03-13 10:46:05 -0400
+Served asset /views/dashboard/geography.js - 200 OK (19ms)
+
+
+Started GET "/assets/views/dashboard/programs_proposal.js?body=1" for 127.0.0.1 at 2013-03-13 10:46:05 -0400
+Served asset /views/dashboard/programs_proposal.js - 200 OK (1ms)
+
+
+Started GET "/assets/views/dashboard/programs.js?body=1" for 127.0.0.1 at 2013-03-13 10:46:05 -0400
+Served asset /views/dashboard/programs.js - 200 OK (1ms)
+
+
+Started GET "/assets/views/dashboard/geography_institutions.js?body=1" for 127.0.0.1 at 2013-03-13 10:46:05 -0400
+Served asset /views/dashboard/geography_institutions.js - 200 OK (1ms)
+
+
+Started GET "/assets/require/require.js?body=1" for 127.0.0.1 at 2013-03-13 10:46:05 -0400
+Served asset /require/require.js - 200 OK (3ms)
+
+
+Started GET "/assets/views/dashboard/programs_researchers.js?body=1" for 127.0.0.1 at 2013-03-13 10:46:05 -0400
+Served asset /views/dashboard/programs_researchers.js - 200 OK (3ms)
+
+
+Started GET "/assets/views/dashboard/index.js?body=1" for 127.0.0.1 at 2013-03-13 10:46:05 -0400
+Served asset /views/dashboard/index.js - 200 OK (1ms)
+
+
+Started GET "/assets/views/proposals/proposal.js?body=1" for 127.0.0.1 at 2013-03-13 10:46:05 -0400
+Served asset /views/proposals/proposal.js - 200 OK (26ms)
+
+
+Started GET "/assets/views/dashboard/programs_topics.js?body=1" for 127.0.0.1 at 2013-03-13 10:46:05 -0400
+Served asset /views/dashboard/programs_topics.js - 200 OK (43ms)
+
+
+Started GET "/assets/views/dashboard/programs_proposals.js?body=1" for 127.0.0.1 at 2013-03-13 10:46:06 -0400
+Served asset /views/dashboard/programs_proposals.js - 200 OK (22ms)
+
+
+Started GET "/assets/views/programs/growth.js?body=1" for 127.0.0.1 at 2013-03-13 10:46:06 -0400
+Served asset /views/programs/growth.js - 200 OK (25ms)
+
+
+Started GET "/assets/views/research/topics_divisions.js?body=1" for 127.0.0.1 at 2013-03-13 10:46:06 -0400
+Served asset /views/research/topics_divisions.js - 200 OK (42ms)
+
+
+Started GET "/assets/views/programs/funding.js?body=1" for 127.0.0.1 at 2013-03-13 10:46:06 -0400
+Served asset /views/programs/funding.js - 200 OK (2ms)
+
+
+Started GET "/assets/views/topics/growth.js?body=1" for 127.0.0.1 at 2013-03-13 10:46:06 -0400
+Served asset /views/topics/growth.js - 200 OK (1ms)
+
+
+Started GET "/assets/views/research/topics_proposals.js?body=1" for 127.0.0.1 at 2013-03-13 10:46:06 -0400
+Served asset /views/research/topics_proposals.js - 200 OK (24ms)
+
+
+Started GET "/assets/views/topics/funding.js?body=1" for 127.0.0.1 at 2013-03-13 10:46:06 -0400
+Served asset /views/topics/funding.js - 200 OK (1ms)
+
+
+Started GET "/assets/views/research/topics.js?body=1" for 127.0.0.1 at 2013-03-13 10:46:06 -0400
+Served asset /views/research/topics.js - 200 OK (35ms)
+
+
+Started GET "/assets/views/research/topics_proposal.js?body=1" for 127.0.0.1 at 2013-03-13 10:46:06 -0400
+Served asset /views/research/topics_proposal.js - 200 OK (1ms)
+
+
+Started GET "/assets/views/topics/proposals.js?body=1" for 127.0.0.1 at 2013-03-13 10:46:06 -0400
+Served asset /views/topics/proposals.js - 200 OK (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-03-13 10:46:06 -0400
+Served asset /application.js - 200 OK (4ms)
+
+
+Started GET "/assets/headerbg-wide.png" for 127.0.0.1 at 2013-03-13 10:46:07 -0400
+Served asset /headerbg-wide.png - 200 OK (10ms)
+
+
+Started GET "/assets/seal-nsf.png" for 127.0.0.1 at 2013-03-13 10:46:07 -0400
+Served asset /seal-nsf.png - 200 OK (1ms)
+
+
+Started GET "/assets/dashboard_proto-logo.png" for 127.0.0.1 at 2013-03-13 10:46:07 -0400
+Served asset /dashboard_proto-logo.png - 200 OK (4ms)

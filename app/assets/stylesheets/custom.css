@@ -136,11 +136,17 @@ text-indent: -100%;
 
 .header-base .seal-pres {
 background: transparent url(seal-pres.png) no-repeat top left;
-left: 15px;
 }
 
 .header-base .seal-nsf {
 background: transparent url(seal-nsf.png) no-repeat top left;
+}
+
+.header-base .seal-left {
+left: 15px;	
+}
+
+.header-base .seal-right {
 right: 15px;
 }
 

@@ -1,16 +1,16 @@
-o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1361904663.71536:@value{I"
+o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1363185964.740989:@value{I"
 class:EFI"BundledAsset;
 FI"id;
-F"%b4d34cf769b2cac0d1a88ee07b14aa75I"logical_path;
+F"%49640e5adfd85ce7f076ed69ab8b4bf8I"logical_path;
 F"custom.cssI"pathname;
 FI",$root/app/assets/stylesheets/custom.css;
 FI"content_type;
 FI"text/css;
 FI"
 mtime;
-FI"2013-02-21T17:14:44-05:00;
+FI"2013-03-13T10:40:24-04:00;
 FI"	body;
-FI"Ð5html { overflow-y: scroll; }
+FI"6html { overflow-y: scroll; }
 
 body {
   background: #d2d2d2;
@@ -126,13 +126,13 @@ top: 13px;
 display: block;
 height: 101px;
 width: 452px;
-background: transparent url(cov-logo.png) no-repeat top left;
+background: transparent url(dashboard_proto-logo.png) no-repeat top left;
 overflow: hidden;
 text-indent: -100%;
 }
 
 .header-base h1.internal a {
-background: transparent url(cov-logo-internal.png) no-repeat top left;
+background: transparent url(dashboard_proto-logo.png) no-repeat top left;
 }
 
 .header-base .seal-pres,
@@ -148,11 +148,17 @@ text-indent: -100%;
 
 .header-base .seal-pres {
 background: transparent url(seal-pres.png) no-repeat top left;
-left: 15px;
 }
 
 .header-base .seal-nsf {
 background: transparent url(seal-nsf.png) no-repeat top left;
+}
+
+.header-base .seal-left {
+left: 15px;	
+}
+
+.header-base .seal-right {
 right: 15px;
 }
 
@@ -644,7 +650,7 @@ F[{I"	path;
 FI",$root/app/assets/stylesheets/custom.css;
 FI"
 mtime;
-FIu:	Time¶F€  À::@_zoneI"EST;
-T:offsetiþ°¹I"hexdigest;
-F"%5ed33588ba547d0ffb7c339c955b5e62I"_version;
+FIu:	Time®I€  €¡:@_zoneI"EDT;
+T:offsetiþÀÇI"hexdigest;
+F"%6df9df25f13df2f7d173d2b476f24a23I"_version;
 F"%46dde6621c301f4928e3b34efee9e3b5

@@ -1,0 +1,17 @@
+o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1363185967.5041611:@value{I"
+class:EFI"StaticAsset;
+FI"id;
+F"%ada6ec71a891b2330a2ed30cc736ee9cI"logical_path;
+FI"dashboard_proto-logo.png;
+TI"pathname;
+FI"5$root/app/assets/images/dashboard_proto-logo.png;
+FI"content_type;
+FI"image/png;
+FI"
+mtime;
+FI"2013-03-13T10:18:48-04:00;
+FI"length;
+FI"	6589;
+FI"digest;
+F"%cfcb093720ed8998a804eacc4c50fc37I"_version;
+F"%46dde6621c301f4928e3b34efee9e3b5

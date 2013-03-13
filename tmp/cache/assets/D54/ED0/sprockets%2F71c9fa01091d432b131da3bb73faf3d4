@@ -1,6 +1,6 @@
-o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1361904663.780685:@value{	I"length:EFiÖII"digest;
-F"%252e31188f08fb8d0c8cf2262c585d1bI"source;
-FI"ÖI/*!
+o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1363185964.8025038:@value{	I"length:EFi!JI"digest;
+F"%53a8680b82efa8421e285e5301520eceI"source;
+FI"!J/*!
  * Bootstrap v2.0.0
  *
  * Copyright 2012 Twitter, Inc
@@ -4353,13 +4353,13 @@ top: 13px;
 display: block;
 height: 101px;
 width: 452px;
-background: transparent url(cov-logo.png) no-repeat top left;
+background: transparent url(dashboard_proto-logo.png) no-repeat top left;
 overflow: hidden;
 text-indent: -100%;
 }
 
 .header-base h1.internal a {
-background: transparent url(cov-logo-internal.png) no-repeat top left;
+background: transparent url(dashboard_proto-logo.png) no-repeat top left;
 }
 
 .header-base .seal-pres,
@@ -4375,11 +4375,17 @@ text-indent: -100%;
 
 .header-base .seal-pres {
 background: transparent url(seal-pres.png) no-repeat top left;
-left: 15px;
 }
 
 .header-base .seal-nsf {
 background: transparent url(seal-nsf.png) no-repeat top left;
+}
+
+.header-base .seal-left {
+left: 15px;	
+}
+
+.header-base .seal-right {
 right: 15px;
 }
 
@@ -5117,4 +5123,4 @@ margin: 0;
 .flag.flag-zw {background-position: -80px -165px}
 ;
 FI"_version;
-F"%6308f2690e499ea1754ca2bd7497b0a5
+F"%76a1ecc7e28e6b2177d9006f453c4faf
