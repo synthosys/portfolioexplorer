@@ -1,0 +1,120 @@
+App.Views.Page = Backbone.View.extend({
+	events: {
+		"click table[#divisions_select_table] tbody tr": "selectDivision",
+		"click table[#divisions_select_table] tbody tr td input[type=radio]": "submit"
+	},
+	initialize: function() {
+		//use divisions collection
+		this.collection = new App.Collections.Divisions;
+		this.collection.on('reset', this.render, this);
+		
+		$('div#loader', this.el).html("<img src='" + baseURI + "/assets/ajax-load.gif" + "'/> Loading divisions");
+		this.collection.fetch();
+	},
+	selectDivision: function(e) {
+		$(e.currentTarget).find('td input[type=radio]').prop('checked', true);
+		$(e.currentTarget).closest('form').submit();
+	},
+	submit: function(e) {
+		$(e.currentTarget).closest('form').submit();
+	},
+	render: function() {
+		$('div#loader', this.el).html('');
+		
+		var self = this;
+		var data = [];
+		var loaded_data = this.collection.toJSON();
+		_.each(App.directorates, function(divisions, directorate) {
+			_.each(divisions, function(division) {
+				if (typeof(division)=='string') {
+					var tmp = _.find(loaded_data,function(row) { return row.org==division; })
+					if (tmp) {
+						tmp.directorate = directorate;
+						tmp.parentdivision = '';
+						data.push(tmp);
+					}					
+				} else {
+					_.each(division, function(suborgs, subdivision) {
+						_.each(suborgs, function(suborg) {
+							var tmp = _.find(loaded_data,function(row) { return row.org==suborg; })
+							if (tmp) {
+								tmp.directorate = directorate;
+								tmp.parentdivision = subdivision;
+								data.push(tmp);
+							}
+						});
+					});
+				}
+			});
+		});
+		
+		//columns
+		var columns = [
+			{
+				"fnRender": function ( oObj ) {
+					var html = '<input type="radio" name="division" value="'+oObj.aData.org+'"';
+					if (getDivision()==oObj.aData.org) html += ' checked';
+					html += '> '+oObj.aData.label+' ('+oObj.aData.org+')';
+					return html;
+				},
+				"sWidth": "500px",
+				"sTitle": "Division",
+				"mDataProp": "label"
+			}
+		];
+		
+		//params
+		var params = {
+			"bDestroy": true,
+			"bJQueryUI": true,
+			"bAutoWidth": false,
+			"bProcessing": true,
+			"oLanguage": {
+				"sLengthMenu:": "Display _MENU_ records per page",
+				"sSearch": "Filter:"
+			},
+			"sDom": '<"H"fr>t<"F"lip>',
+			"iDisplayLength": 200,
+			"bInfo": false,
+			"bFilter": true,
+			"bLengthChange": false,
+			"bPaginate": false,
+			"aaData": data,
+			"aoColumns": columns,
+			"bSort": false,
+			"fnDrawCallback": function ( oSettings ) {
+				if ( oSettings.aiDisplay.length == 0 )
+				{
+					return;
+				}			
+				var nTrs = $('#divisions_select_table tbody tr');
+				var iColspan = nTrs[0].getElementsByTagName('td').length;
+				var sLastGroup = "";
+				var sLastSubGroup = "";
+				for ( var i=0 ; i<nTrs.length ; i++ )
+				{
+					var iDisplayIndex = oSettings._iDisplayStart + i;
+					var sGroup = oSettings.aoData[ oSettings.aiDisplay[iDisplayIndex] ]._aData.directorate; //directorate
+					var sSubGroup = oSettings.aoData[ oSettings.aiDisplay[iDisplayIndex] ]._aData.parentdivision; //parent division
+					//indents
+					if (sSubGroup) $(nTrs[i]).find('td:eq(0)').attr('style','padding-left: 30px');
+					else if (sGroup) $(nTrs[i]).find('td:eq(0)').attr('style','padding-left: 15px');
+			//console.log(sSubGroup);				
+					if ( sGroup != sLastGroup )
+					{
+						$('<tr class="grouprow"><td class="group" colspan="'+iColspan+'"><strong>'+sGroup+'</strong></td></tr>').insertBefore(nTrs[i]);
+						sLastGroup = sGroup;
+						//reset subgroup
+						sLastSubGroup = "";
+					}
+					if (sSubGroup != sLastSubGroup) {
+			//console.log(sSubGroup);					
+						$('<tr class="grouprow"><td class="group" colspan="'+iColspan+'" style="padding-left: 15px;"><strong>'+sSubGroup+'</strong></td></tr>').insertBefore(nTrs[i]);
+						sLastSubGroup = sSubGroup;					
+					} 
+				}
+			}
+		}
+		$('#divisions_select_table', this.el).dataTable(params);
+	}
+});

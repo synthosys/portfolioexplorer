@@ -41,11 +41,16 @@
   %body
     .container.header
       .header-base
+        .current-division
+          Viewing: 
+          - if current_division
+            = current_division
+          - else
+            None Selected
+          (
+          = link_to "change", root_path
+          )
         %header
-          %span.seal-nsf.seal-left.pull-left
-            nsf logo
-          %span.seal-nsf.seal-right.pull-right
-            nsf logo
           %h1
             = link_to "Portfolio Explorer", root_path
 
@@ -96,7 +101,7 @@
 
 %script(type="text/javascript")
   function getDivision(){
-  return 'CMMI';
+  return '#{current_division}';
   // return '';
   }
 

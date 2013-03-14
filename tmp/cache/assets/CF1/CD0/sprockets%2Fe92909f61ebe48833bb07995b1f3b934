@@ -1,6 +1,6 @@
-o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1361904898.916288:@value{	I"length:EFi1I"digest;
-F"%8d2961f3b51390167c95400ab29789ecI"source;
-FI"1var App = {
+o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1363286810.619862:@value{	I"length:EFi1I"digest;
+F"%d6ca8ce2f16ed11ebc4d7b4c5534aa30I"source;
+FI"1var App = {
     Collections: {},
     Views: {},
 	states: {
@@ -61,7 +61,7 @@ FI"1var App = {
 	"OGC":"Office of the General Counsel",
 	"OIA":"Office of Integrative Activities",
 	"OISE":"Office of International Science and Engineering",
-	"ODI":"Office of Diversity and Inclusion (ODI)",
+	"ODI":"Office of Diversity and Inclusion",
 	"OLPA":"Office of Legislative & Public Affairs",
 	"ANT":"Antarctic Sciences",
 	"ARC":"Arctic Sciences",
@@ -397,4 +397,4 @@ FI"1var App = {
 };
 ;
 FI"_version;
-F"%2c7941efa1a54646fed5244d7a930398
+F"%1435a90960c59751d59049111357ca36

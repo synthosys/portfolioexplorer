@@ -3,6 +3,8 @@ Portfolioexplorer::Application.routes.draw do
 
   get "pages/home"
   get "pages/contact"
+  
+  post '/division' => 'pages#create'
 
   resources :dashboard
   resources :research

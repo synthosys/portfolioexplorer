@@ -76,7 +76,14 @@ display: block;
 
 .header {
 margin: 0 auto;
-padding: 15px 15px 0 15px;
+}
+
+.header .current-division {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	color: #2d4d85;
+	font-weight: bold;
 }
 
 .header .navbar .navbar-inner {
@@ -101,7 +108,7 @@ height: 128px;
 margin: 0 -15px;
 }
 
-.header-base { background: transparent url(headerbg-wide.png) no-repeat bottom; }
+.header-base { background: transparent url(headerbg-wide.jpg) no-repeat bottom; }
 .header-base h1 {
 height: 101px;
 width: 452px;
@@ -629,4 +636,11 @@ padding: 0;
 
 #division_summary.alert .row [class^="span"] {
 margin: 0;
+}
+
+/*
+--------------------------------------------------------------------------------------- divisions_select_table
+*/
+#divisions_select_table tbody tr:hover {
+	cursor: pointer;
 }

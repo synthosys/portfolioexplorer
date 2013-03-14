@@ -1,16 +1,16 @@
-o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1363185964.740989:@value{I"
+o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1363291335.3744059:@value{I"
 class:EFI"BundledAsset;
 FI"id;
-F"%49640e5adfd85ce7f076ed69ab8b4bf8I"logical_path;
+F"%877472f8c11e7d64ee1211b2db3059a3I"logical_path;
 F"custom.cssI"pathname;
 FI",$root/app/assets/stylesheets/custom.css;
 FI"content_type;
 FI"text/css;
 FI"
 mtime;
-FI"2013-03-13T10:40:24-04:00;
+FI"2013-03-14T16:02:12-04:00;
 FI"	body;
-FI"6html { overflow-y: scroll; }
+FI"&7html { overflow-y: scroll; }
 
 body {
   background: #d2d2d2;
@@ -88,7 +88,14 @@ display: block;
 
 .header {
 margin: 0 auto;
-padding: 15px 15px 0 15px;
+}
+
+.header .current-division {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	color: #2d4d85;
+	font-weight: bold;
 }
 
 .header .navbar .navbar-inner {
@@ -113,7 +120,7 @@ height: 128px;
 margin: 0 -15px;
 }
 
-.header-base { background: transparent url(headerbg-wide.png) no-repeat bottom; }
+.header-base { background: transparent url(headerbg-wide.jpg) no-repeat bottom; }
 .header-base h1 {
 height: 101px;
 width: 452px;
@@ -642,6 +649,13 @@ padding: 0;
 #division_summary.alert .row [class^="span"] {
 margin: 0;
 }
+
+/*
+--------------------------------------------------------------------------------------- divisions_select_table
+*/
+#divisions_select_table tbody tr:hover {
+	cursor: pointer;
+}
 ;
 FI"asset_paths;
 F[I",$root/app/assets/stylesheets/custom.css;
@@ -650,7 +664,7 @@ F[{I"	path;
 FI",$root/app/assets/stylesheets/custom.css;
 FI"
 mtime;
-FIu:	Time®I€  €¡:@_zoneI"EDT;
+FIu:	TimeÔI€  À:@_zoneI"EDT;
 T:offsetiþÀÇI"hexdigest;
-F"%6df9df25f13df2f7d173d2b476f24a23I"_version;
+F"%b3b57b525856616e308f3a34fb7ec764I"_version;
 F"%46dde6621c301f4928e3b34efee9e3b5

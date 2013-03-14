@@ -1,6 +1,6 @@
-o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1363185964.8025038:@value{	I"length:EFi!JI"digest;
-F"%53a8680b82efa8421e285e5301520eceI"source;
-FI"!J/*!
+o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1363291335.447343:@value{	I"length:EFi,KI"digest;
+F"%59e4d22cc3ef30326dde80c16d549d5cI"source;
+FI",K/*!
  * Bootstrap v2.0.0
  *
  * Copyright 2012 Twitter, Inc
@@ -4315,7 +4315,14 @@ display: block;
 
 .header {
 margin: 0 auto;
-padding: 15px 15px 0 15px;
+}
+
+.header .current-division {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	color: #2d4d85;
+	font-weight: bold;
 }
 
 .header .navbar .navbar-inner {
@@ -4340,7 +4347,7 @@ height: 128px;
 margin: 0 -15px;
 }
 
-.header-base { background: transparent url(headerbg-wide.png) no-repeat bottom; }
+.header-base { background: transparent url(headerbg-wide.jpg) no-repeat bottom; }
 .header-base h1 {
 height: 101px;
 width: 452px;
@@ -4869,6 +4876,13 @@ padding: 0;
 #division_summary.alert .row [class^="span"] {
 margin: 0;
 }
+
+/*
+--------------------------------------------------------------------------------------- divisions_select_table
+*/
+#divisions_select_table tbody tr:hover {
+	cursor: pointer;
+}
 .flag {
 	width: 16px;
 	height: 11px;
@@ -5123,4 +5137,4 @@ margin: 0;
 .flag.flag-zw {background-position: -80px -165px}
 ;
 FI"_version;
-F"%76a1ecc7e28e6b2177d9006f453c4faf
+F"%b1a8779621cb6eaf6f219772bccdff22

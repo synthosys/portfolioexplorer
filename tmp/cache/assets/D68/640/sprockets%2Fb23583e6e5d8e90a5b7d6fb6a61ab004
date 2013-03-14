@@ -1,16 +1,16 @@
-o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1361904898.855693:@value{I"
+o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1363286809.9732091:@value{I"
 class:EFI"BundledAsset;
 FI"id;
-F"%2c7941efa1a54646fed5244d7a930398I"logical_path;
+F"%1435a90960c59751d59049111357ca36I"logical_path;
 F"app.jsI"pathname;
 FI",$root/app/assets/javascripts/app.js.erb;
 FI"content_type;
 FI"application/javascript;
 FI"
 mtime;
-FI"2013-02-26T13:54:55-05:00;
+FI"2013-03-14T14:45:01-04:00;
 FI"	body;
-FI"1var App = {
+FI"1var App = {
     Collections: {},
     Views: {},
 	states: {
@@ -71,7 +71,7 @@ FI"1var App = {
 	"OGC":"Office of the General Counsel",
 	"OIA":"Office of Integrative Activities",
 	"OISE":"Office of International Science and Engineering",
-	"ODI":"Office of Diversity and Inclusion (ODI)",
+	"ODI":"Office of Diversity and Inclusion",
 	"OLPA":"Office of Legislative & Public Affairs",
 	"ANT":"Antarctic Sciences",
 	"ARC":"Arctic Sciences",
@@ -413,7 +413,7 @@ F[{I"	path;
 FI",$root/app/assets/javascripts/app.js.erb;
 FI"
 mtime;
-FIu:	TimeRG€  pÛ:@_zoneI"EST;
-T:offsetiþ°¹I"hexdigest;
-F"%8d2961f3b51390167c95400ab29789ecI"_version;
+FIu:	TimeÒI€  ´:@_zoneI"EDT;
+T:offsetiþÀÇI"hexdigest;
+F"%d6ca8ce2f16ed11ebc4d7b4c5534aa30I"_version;
 F"%46dde6621c301f4928e3b34efee9e3b5
