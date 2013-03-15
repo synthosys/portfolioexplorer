@@ -6,20 +6,15 @@
 <div class="page-header">
 <h1>Welcome</h1>
 </div>
-<p>Welcome to the C.O.V. Module and Engineering Dashboard of the NSF STAR METRICS Portfolio Explorer. Please use the form to the right to log in. Upon log in, you will be redirected to the module/s associated with your account.</p>
-<p>
-<strong>COV Module:</strong>
-This module is designed to provide C.O.V. members with new data to support the review of their assigned proposals and the overall division portfolio.
-<br>
-<strong>Engineering Dashboard:</strong>
-Designed for Internal NSF users, this module provides unique views of division and program portfolios, including the Research Topics assigned to submitted proposals.
-</p>
-<p>These modules were developed as a collaboration between two Engineering divisions: Civil, Mechanical and Manufacturing Innovation (CMMI) and Chemical, Bioengineering, Environmental, and Transport Systems (CBET).</p>
+<p>Welcome to the internal N.S.F prototype of the Portfolio Explorer.</p>
+<p>This tool provides users with information about Divisional and Program funding at NSF. Users can utilize Research Topics (based on Topic Modeling) to compare funding activity by different NSF entities.</p>
+<p><strong>To begin, please choose a Division from the list to the right.</strong></p>
 </div>
 </div>
 <div class="span8">
 <div class="right-side">
-<h2>Choose a Division<% if @current_division %> (<%= @currrent_division %>)<% end %></h2>
+<h2 class="margin-bottom5">Choose a Division</h2>
+<% if @current_division %><p class="muted">Currently Selected: <%= @current_division %></p><% end %>
 <%= form_tag '/division' do %>
 <div id="loader"></div>
 <table class="table table-striped table-bordered table-condensed" id="divisions_select_table">

@@ -1,16 +1,16 @@
-o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1363291335.3744059:@value{I"
+o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1363355977.012713:@value{I"
 class:EFI"BundledAsset;
 FI"id;
-F"%877472f8c11e7d64ee1211b2db3059a3I"logical_path;
+F"%85b3b7868e3805bc981d893470f787c1I"logical_path;
 F"custom.cssI"pathname;
 FI",$root/app/assets/stylesheets/custom.css;
 FI"content_type;
 FI"text/css;
 FI"
 mtime;
-FI"2013-03-14T16:02:12-04:00;
+FI"2013-03-15T09:59:33-04:00;
 FI"	body;
-FI"&7html { overflow-y: scroll; }
+FI"Y7html { overflow-y: scroll; }
 
 body {
   background: #d2d2d2;
@@ -656,6 +656,10 @@ margin: 0;
 #divisions_select_table tbody tr:hover {
 	cursor: pointer;
 }
+
+#divisions_select_table_filter {
+	float: right;
+}
 ;
 FI"asset_paths;
 F[I",$root/app/assets/stylesheets/custom.css;
@@ -664,7 +668,7 @@ F[{I"	path;
 FI",$root/app/assets/stylesheets/custom.css;
 FI"
 mtime;
-FIu:	TimeÔI€  À:@_zoneI"EDT;
+FIu:	TimeíI€  î:@_zoneI"EDT;
 T:offsetiþÀÇI"hexdigest;
-F"%b3b57b525856616e308f3a34fb7ec764I"_version;
+F"%fbf14bf657711bf28394096f87cf3ab1I"_version;
 F"%46dde6621c301f4928e3b34efee9e3b5

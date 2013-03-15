@@ -1,6 +1,6 @@
-o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1363291335.455704:@value{	I"length:EFi&7I"digest;
-F"%48d26bbd88a0abd164186d52b8c83f33I"source;
-FI"&7html { overflow-y: scroll; }
+o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1363355977.055352:@value{	I"length:EFiY7I"digest;
+F"%67e43c87eec48b4f3806f61e4d28cf7eI"source;
+FI"Y7html { overflow-y: scroll; }
 
 body {
   background: #d2d2d2;
@@ -646,6 +646,10 @@ margin: 0;
 #divisions_select_table tbody tr:hover {
 	cursor: pointer;
 }
+
+#divisions_select_table_filter {
+	float: right;
+}
 ;
 FI"_version;
-F"%877472f8c11e7d64ee1211b2db3059a3
+F"%85b3b7868e3805bc981d893470f787c1

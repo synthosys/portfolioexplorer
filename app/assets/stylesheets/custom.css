@@ -644,3 +644,7 @@ margin: 0;
 #divisions_select_table tbody tr:hover {
 	cursor: pointer;
 }
+
+#divisions_select_table_filter {
+	float: right;
+}

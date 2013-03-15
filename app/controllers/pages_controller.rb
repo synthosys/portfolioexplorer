@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   def home
+    current_division
   end
 
   def contact

@@ -1,6 +1,6 @@
-o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1363291335.447343:@value{	I"length:EFi,KI"digest;
-F"%59e4d22cc3ef30326dde80c16d549d5cI"source;
-FI",K/*!
+o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1363355977.051512:@value{	I"length:EFi_KI"digest;
+F"%8adb913bb4710448c73460e37c94b7c9I"source;
+FI"_K/*!
  * Bootstrap v2.0.0
  *
  * Copyright 2012 Twitter, Inc
@@ -4883,6 +4883,10 @@ margin: 0;
 #divisions_select_table tbody tr:hover {
 	cursor: pointer;
 }
+
+#divisions_select_table_filter {
+	float: right;
+}
 .flag {
 	width: 16px;
 	height: 11px;
@@ -5137,4 +5141,4 @@ margin: 0;
 .flag.flag-zw {background-position: -80px -165px}
 ;
 FI"_version;
-F"%b1a8779621cb6eaf6f219772bccdff22
+F"%2ac623b1a4f139acc4ccf25b5ecdea26
