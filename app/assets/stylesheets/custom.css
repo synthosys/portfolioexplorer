@@ -11,6 +11,11 @@ a {
 	color: #febe1c;
 }
 
+a:hover,
+a:active {
+	color: #ffe477;
+}
+
 .text-left { text-align: left;}
 .text-right { text-align: right;}
 .text-center, td.text-center, th.text-center { text-align: center;}
@@ -54,6 +59,11 @@ margin-bottom: 5px;
 
 .margin-bottom10 {
 margin-bottom: 10px;
+}
+
+.alert-info {
+    background-color: #adc2cb;
+    border-color: #BCE8F1;
 }
 
 /*
@@ -271,13 +281,13 @@ line-height: 11px;
 }
 
 .navbar .nav > li.active, .navbar .nav > li.active a, .navbar .nav > li:hover {
-	background: #138652;
-	background: -moz-linear-gradient(top,  #138652 0%, #145135 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#138652), color-stop(100%,#145135));
-	background: -webkit-linear-gradient(top,  #138652 0%,#145135 100%);
-	background: -o-linear-gradient(top,  #138652 0%,#145135 100%);
-	background: -ms-linear-gradient(top,  #138652 0%,#145135 100%);
-	background: linear-gradient(top,  #138652 0%,#145135 100%);
+	background: #5C5C5C;
+	background: -moz-linear-gradient(top,  #5C5C5C 0%, #4E4E4E 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#5C5C5C), color-stop(100%,#4E4E4E));
+	background: -webkit-linear-gradient(top,  #5C5C5C 0%,#4E4E4E 100%);
+	background: -o-linear-gradient(top,  #5C5C5C 0%,#4E4E4E 100%);
+	background: -ms-linear-gradient(top,  #5C5C5C 0%,#4E4E4E 100%);
+	background: linear-gradient(top,  #5C5C5C 0%,#4E4E4E 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#138652', endColorstr='#145135',GradientType=0 );
     text-decoration: none;
 }
@@ -287,7 +297,7 @@ line-height: 11px;
   font-size: 12px;
 }
 .dropdown-menu li:hover {
-  background: #138652;
+  background: #5C5C5C;
 }
 
 /*
@@ -298,6 +308,7 @@ line-height: 11px;
 margin: 0;
 padding: 0;
 border: none;
+margin-top: 20px;
 margin-bottom: 20px;
 }
 
@@ -363,7 +374,7 @@ color: #334779;
 }
 
 .nav-tabs > li > a {
-background: #16a169;
+background: #5C5C5C;
 color: #fff;
 }
 
@@ -371,6 +382,9 @@ color: #fff;
 margin-right: 5px;
 }
 
+.nav-tabs > li {
+    margin-bottom: 0px;
+}
 /*
 --------------------------------------------------------------------------------------- TABLES
 */
@@ -589,7 +603,7 @@ cursor: default;
 .table-header-controls {
 margin-bottom: 20px;
 border: 1px solid #d6d6d6;
-background: #f1f1f1;
+background: #d3d3d3;
 -webkit-border-radius: 5px;
 -moz-border-radius: 5px;
 border-radius: 5px; 
