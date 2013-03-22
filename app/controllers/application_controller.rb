@@ -1,15 +1,14 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  # before_filter :authenticate
-  # before_filter :set_current_division
+  before_filter :authenticate
   
   helper_method :current_division
   
   protected
     def authenticate
       authenticate_or_request_with_http_basic do |username, password|
-        username == "smetrics" && password == "apihelp"
+        username == "demo" && password == "omed"
       end
     end
     

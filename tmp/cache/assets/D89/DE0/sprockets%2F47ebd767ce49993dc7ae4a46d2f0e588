@@ -1,0 +1,18 @@
+o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1363968003.760384:@value{I"
+class:EFI"StaticAsset;
+FI"id;
+F"%c9dd36a668389ec2919bdbd37c0c1841I"logical_path;
+FI"bkgd-repeat.png;
+TI"pathname;
+FI",$root/app/assets/images/bkgd-repeat.png;
+FI"content_type;
+FI"image/png;
+FI"
+mtime;
+FI"2013-03-21T15:42:04-04:00;
+FI"length;
+FI"
+50878;
+FI"digest;
+F"%7ac8fd7d5d2cfbb0f6fb67e3a75c3889I"_version;
+F"%46dde6621c301f4928e3b34efee9e3b5

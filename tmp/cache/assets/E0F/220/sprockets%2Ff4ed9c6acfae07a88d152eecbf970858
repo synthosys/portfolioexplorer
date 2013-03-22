@@ -1,6 +1,6 @@
-o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1361904663.786023:@value{	I"length:EFiÝI"digest;
-F"%bee2b5a3df8defb297e1902945984940I"source;
-FI"Ý/* line 1, /Users/nidhi/Sites/portfolioexplorer/app/assets/stylesheets/custom-rl.scss */
+o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1363968427.2342541:@value{	I"length:EFiöI"digest;
+F"%884504b10d0f669aca2cb0105338fb52I"source;
+FI"ö/* line 1, /Users/nidhi/Sites/portfolioexplorer/app/assets/stylesheets/custom-rl.scss */
 .new-base {
   padding-top: 50px;
 }
@@ -11,8 +11,8 @@ FI"Ý/* line 1, /Users/nidhi/Sites/portfolioexplorer/app/assets/stylesheets/cus
 /* line 6, /Users/nidhi/Sites/portfolioexplorer/app/assets/stylesheets/custom-rl.scss */
 .new-base .right-side {
   padding: 30px;
-  border-left: 1px solid #d9d9d9;
-  background: #fcfcfc;
+  /* border-left: 1px solid darken(#fff, 15%);
+  background: darken(#fff, 1%); */
 }
 /* line 10, /Users/nidhi/Sites/portfolioexplorer/app/assets/stylesheets/custom-rl.scss */
 .new-base .right-side input {
@@ -24,4 +24,4 @@ FI"Ý/* line 1, /Users/nidhi/Sites/portfolioexplorer/app/assets/stylesheets/cus
 }
 ;
 FI"_version;
-F"%6bb86f546e8473b6a9a04299fc8a8118
+F"%0c9d48733877e64760add64f93722a9a

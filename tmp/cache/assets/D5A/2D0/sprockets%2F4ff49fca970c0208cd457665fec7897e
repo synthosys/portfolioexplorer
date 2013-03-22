@@ -1,7 +1,7 @@
-o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1363198607.7240388:@value{I"
+o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1363967453.3883379:@value{I"
 class:EFI"StaticAsset;
 FI"id;
-F"%e4bce0932ae0bda5711ec13aa660598bI"logical_path;
+F"%8798fcb04f4f73461ddfb3e4a0347bc2I"logical_path;
 FI"headerbg-wide.jpg;
 TI"pathname;
 FI".$root/app/assets/images/headerbg-wide.jpg;
@@ -9,9 +9,10 @@ FI"content_type;
 FI"image/jpeg;
 FI"
 mtime;
-FI"2013-02-27T16:43:45-05:00;
+FI"2013-03-21T15:47:04-04:00;
 FI"length;
-FI"	7513;
+FI"
+49330;
 FI"digest;
-F"%a75ea0d1b4a0aff74be6678db2950668I"_version;
+F"%b9a5e3ab0cc28c3b2af0e72f2a5afb5cI"_version;
 F"%46dde6621c301f4928e3b34efee9e3b5
